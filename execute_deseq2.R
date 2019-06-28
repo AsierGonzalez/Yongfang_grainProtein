@@ -57,6 +57,11 @@ summary(res_Sky_v_Gal)
 degs_Sky_v_Gal <- subset(res_Sky_v_Gal, padj < 0.05)
 dim(degs_Sky_v_Gal)
 degs_Sky_v_Gal <- degs_Sky_v_Gal[order(degs_Sky_v_Gal$padj),]
+write.xlsx(degs_Sky_v_Gal,
+           "variety_degs.xlsx",
+           sheetName = "degs_Sky_v_Gal",
+           row.names = T,
+           append = F)
 
 ##############################################################
 #Identify genes DE between Skyfall and Gallant in 100N
@@ -73,6 +78,11 @@ summary(res_Sky_v_Gal_100N)
 degs_Sky_v_Gal_100N <- subset(res_Sky_v_Gal_100N, padj < 0.05)
 dim(degs_Sky_v_Gal_100N)
 degs_Sky_v_Gal_100N <- degs_Sky_v_Gal_100N[order(degs_Sky_v_Gal_100N$padj),]
+write.xlsx(degs_Sky_v_Gal_100N,
+           "variety_degs.xlsx",
+           sheetName = "degs_Sky_v_Gal_100N",
+           row.names = T,
+           append = T)
 
 #Compute overlap between overall DEGs and 100N DEGs
 common_degs_Sky_v_Gal <- rownames(degs_Sky_v_Gal_100N) %>% intersect(rownames(degs_Sky_v_Gal))
@@ -93,6 +103,11 @@ summary(res_Crusoe_v_allOthers)
 degs_Crusoe_v_allOthers <- subset(res_Crusoe_v_allOthers, padj < 0.05)
 dim(degs_Crusoe_v_allOthers)
 degs_Crusoe_v_allOthers <- degs_Crusoe_v_allOthers[order(degs_Crusoe_v_allOthers$padj),]
+write.xlsx(degs_Crusoe_v_allOthers,
+           "variety_degs.xlsx",
+           sheetName = "degs_Crusoe_v_allOthers",
+           row.names = T,
+           append = T)
 
 ##################################################################
 #Identify genes DE between Crusoe and all other varieties in 100N
@@ -109,6 +124,11 @@ summary(res_Crusoe_v_allOthers_100N)
 degs_Crusoe_v_allOthers_100N <- subset(res_Crusoe_v_allOthers_100N, padj < 0.05)
 dim(degs_Crusoe_v_allOthers_100N)
 degs_Crusoe_v_allOthers_100N <- degs_Crusoe_v_allOthers_100N[order(degs_Crusoe_v_allOthers_100N$padj),]
+write.xlsx(degs_Crusoe_v_allOthers_100N,
+           "variety_degs.xlsx",
+           sheetName = "degs_Crusoe_v_allOthers_100N",
+           row.names = T,
+           append = T)
 
 #Compute overlap between overall DEGs and 100N DEGs
 common_degs_Crusoe_v_allOthers <- rownames(degs_Crusoe_v_allOthers_100N) %>% intersect(rownames(degs_Crusoe_v_allOthers))
