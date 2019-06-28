@@ -6,7 +6,7 @@ library("ggplot2")
 options(java.parameters = "- Xmx1024m")
 library(xlsx)
 
-setwd(file.path("Users", "gonzaleza", "Yongfang_grainProtein"))
+setwd(file.path("/Users", "gonzaleza", "rres", "Yongfang_grainProtein"))
 
 #Counts from plate1
 #counts <- read.table("counts.tab", row.names = 1, header=F, sep="\t", comment="", as.is=T)
