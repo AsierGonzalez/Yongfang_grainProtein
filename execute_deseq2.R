@@ -38,8 +38,8 @@ x11();plotPCA(rld, intgroup = "variety")
 x11();plotPCA(rld, intgroup = "N")
 x11();plotPCA(rld, intgroup = "stage")
 
-#dds <- DESeq(dds)
-load("dds.rdata")#Load precomputed dds
+dds <- DESeq(dds)
+#load("dds.rdata")#Load precomputed dds
 resultsNames(dds)
 
 ##############################################################
